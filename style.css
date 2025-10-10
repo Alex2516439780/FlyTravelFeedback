@@ -1,0 +1,660 @@
+/* Общие стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
+    line-height: 1.6;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    background-size: cover;
+    background-attachment: fixed;
+    filter: blur(8px);
+    z-index: -2;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
+    z-index: -1;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 15px;
+    background: linear-gradient(90deg, #10b981db, #059668, #10b981db);
+    border-radius: 15px 15px 0 0;
+}
+
+/* Шапка с эффектом геройского блока */
+.hero {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    margin-bottom: 30px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    /* border-bottom: 3px solid rgba(16, 185, 129, 0.3); */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.05) 50%, rgba(4, 120, 87, 0.1) 100%);
+    z-index: -1;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero .logo {
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.hero p {
+    font-size: 1.3em;
+    font-style: italic;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    opacity: 0.95;
+}
+
+/* Секция формы обратной связи */
+.feedback-form-section h2 {
+    text-align: center;
+    color: #000;
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+    position: relative;
+}
+
+.feedback-form-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #10b981, #059669);
+    border-radius: 2px;
+}
+
+.agency-name {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+/* Стили для формы */
+form h3 {
+    color: #000;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+    position: relative;
+}
+
+form h3::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #10b981, #059669);
+    border-radius: 1px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%; /* Устанавливаем ширину 100% */
+    box-sizing: border-box; /* Включаем padding и border в общую ширину */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="email"] {
+    width: 100%; /* Устанавливаем ширину 100% */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    display: block; /* Добавляем display: block */
+}
+
+.form-group textarea {
+    width: 100%; /* Устанавливаем ширину 100% */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    display: block; /* Добавляем display: block */
+}
+
+.form-group input[type="radio"] {
+    display: none; /* Скрываем стандартные радио-кнопки */
+    margin-right: 5px;
+}
+
+.form-group input[type="radio"] + label {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: normal;
+    padding: 8px 16px;
+    background-color: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-group input[type="radio"]:checked + label {
+    background-color: #10b981;
+    color: #fff;
+    border-color: #10b981;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.form-group input[type="radio"]:focus {
+    outline: none; /* Убираем стандартное синее свечение при фокусе */
+}
+
+/* Стили для таблиц оценок */
+.rating-section table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    table-layout: fixed;
+}
+
+.rating-section th,
+.rating-section td {
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 15px;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.rating-section th {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+    color: #047857;
+    font-weight: 700;
+    font-size: 1.1em;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.rating-section td:first-child {
+    background: rgba(16, 185, 129, 0.05);
+    font-weight: 600;
+    color: #333;
+    width: 70%;
+}
+
+.rating-section td:last-child {
+    width: 30%;
+    text-align: center;
+    margin: 0 auto; /* Сохраняем text-align: center */
+    /* Удаляем flexbox свойства */
+}
+
+.rating-section .rating-group {
+    display: flex; /* Устанавливаем display: flex */
+    justify-content: center; /* Центрируем кнопки внутри группы */
+    flex-wrap: wrap;
+    gap: 4px;
+    max-width: fit-content; /* Группа занимает только нужную ширину */
+    padding: 0 5px;
+    margin: 0 auto; /* Центрируем саму группу внутри td */
+}
+
+.rating-section .rating-group label {
+    margin: 0 1px;
+    cursor: pointer;
+    padding: 14px 12px;
+    background-color: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.8em;
+    min-width: 44px;
+    max-width: 52px; /* Восстанавливаем max-width */
+    text-align: center;
+    flex: 1; /* Восстанавливаем flex: 1 */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.rating-section .rating-group input[type="radio"]:checked + label {
+    background-color: #10b981;
+    color: #fff;
+    border-color: #10b981;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.rating-section .rating-group input[type="radio"] {
+    display: none; /* Скрываем стандартные радио-кнопки */
+}
+
+/* Стили для textarea */
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Кнопка отправки */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: rgba(16, 185, 129, 0.3);
+    color: white;
+    border: 2px solid rgba(16, 185, 129, 0.5);
+    border-radius: 12px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    backdrop-filter: blur(8px);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.2) 100%);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+button[type="submit"]:hover {
+    background: rgba(16, 185, 129, 0.4);
+    border-color: rgba(16, 185, 129, 0.7);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+/* Подвал */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    background-color: #333;
+    margin-top: 30px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .rating-section th,
+    .rating-section td {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    .rating-section .rating-group {
+        flex-wrap: wrap;
+    }
+
+    .rating-section .rating-group label {
+        flex: 1 1 auto;
+        margin: 5px;
+        text-align: center;
+    }
+
+    .form-group input[type="radio"] + label {
+        margin-right: 10px;
+    }
+}
+
+/* Переключатель языков */
+.language-switcher {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    min-width: 50px;
+    text-align: center;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-1px);
+}
+
+.lang-btn.active {
+    background: rgba(16, 185, 129, 0.3);
+    border-color: rgba(16, 185, 129, 0.6);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 15% auto;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+}
+
+.modal-content h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.modal-content p {
+    margin: 0 0 1.5rem 0;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.modal-close {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 0.75rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Дополнительная мобильная адаптивность */
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero .logo {
+        max-width: 200px;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .language-switcher {
+        top: 10px;
+        right: 10px;
+        gap: 6px;
+    }
+
+    .lang-btn {
+        padding: 8px 14px;
+        font-size: 13px;
+        min-width: 45px;
+    }
+
+    /* Мобильная адаптивность для таблиц рейтингов - вертикальное расположение */
+    .rating-section table {
+        font-size: 0.9em;
+    }
+
+    .rating-section th,
+    .rating-section td {
+        padding: 12px 10px;
+        /* display: block; */
+        width: 100%;
+    }
+
+    .rating-section th {
+        text-align: center;
+    }
+
+    .rating-section td:first-child {
+        background: rgba(16, 185, 129, 0.05);
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+        width: 100%;
+    }
+
+    .rating-section td:last-child {
+        text-align: center;
+        /* padding: 12px 15px; */
+        background: rgba(255, 255, 255, 0.3);
+        width: 100%;
+    }
+
+    .rating-section .rating-group {
+        gap: 3px;
+        padding: 0 3px;
+    }
+
+    .rating-section .rating-group label {
+        padding: 12px 10px;
+        font-size: 0.75em;
+        min-width: 40px;
+        max-width: 48px;
+        box-sizing: border-box;
+        line-height: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 30px 10px;
+    }
+
+    .hero .logo {
+        max-width: 180px;
+        margin-bottom: 12px;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .language-switcher {
+        top: 8px;
+        right: 8px;
+        gap: 4px;
+    }
+
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+        min-width: 40px;
+    }
+
+    /* Адаптивность для очень маленьких экранов */
+    .rating-section table {
+        font-size: 0.8em;
+    }
+
+    .rating-section th,
+    .rating-section td {
+        padding: 10px 8px;
+    }
+
+    .rating-section .rating-group {
+        gap: 2px;
+        padding: 0 2px;
+    }
+
+    .rating-section .rating-group label {
+        padding: 10px 8px;
+        font-size: 0.7em;
+        min-width: 36px;
+        max-width: 44px;
+        box-sizing: border-box;
+        line-height: 1;
+    }
+}
+
+.form-group.error-highlight {
+    border: 2px solid #ff4d4d; /* Красная рамка для выделения */
+    border-radius: 8px;
+    padding: 10px;
+    background-color: rgba(255, 77, 77, 0.1); /* Легкий красный фон */
+    box-sizing: border-box; /* Включаем padding и border в общую ширину */
+    margin: 0; /* Убираем внешние отступы */
+}
+
+.rating-section table.error-highlight {
+    border: 2px solid #ff4d4d;
+    border-radius: 10px;
+    background-color: rgba(255, 77, 77, 0.1);
+    box-sizing: border-box; /* Включаем border в общую ширину */
+    margin: 0; /* Убираем внешние отступы */
+}

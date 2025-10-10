@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Обратная связь Oks Tours</title>
+    <link rel="icon" type="image/png" href="ico.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-content">
+        <div class="language-switcher">
+          <button id="langRu" class="lang-btn active">РУ</button>
+          <button id="langUz" class="lang-btn">UZ</button>
+        </div>
+        <img src="oks.png" alt="Oks Tours" class="logo" />
+        <p
+          data-ru="Ваш незабываемый отдых начинается здесь!"
+          data-uz="Sizning unutilmas sayohatingiz bu yerda boshlanadi!"
+        >
+          Ваш незабываемый отдых начинается здесь!
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="feedback-form-section">
+        <h2
+          data-ru="Поделитесь впечатлениями о поездке"
+          data-uz="Sayohatingiz haqida fikringizni yozib qoldiring"
+        >
+          Поделитесь впечатлениями о поездке
+        </h2>
+        <p
+          class="agency-name"
+          data-ru='Туристическое агентство "Oks Tours"'
+          data-uz='"Oks Tours" sayohat agentligi'
+        >
+          Туристическое агентство "Oks Tours"
+        </p>
+        <p
+          data-ru='Уважаемый клиент! Благодарим вас за выбор "Oks Tours"! Нам очень важно узнать ваше мнение о поездке, чтобы сделать наш сервис ещё лучше. Пожалуйста, уделите пару минут и ответьте на несколько вопросов.'
+          data-uz='"Oks Tours" kompaniyasini tanlaganingiz uchun sizga minnatdorchilik bildiramiz! Sizning safaringiz haqidagi fikringiz biz uchun juda muhim — bu bizga xizmatimizni yanada yaxshilashga yordam beradi. Iltimos, bir necha daqiqa ajrating va quyidagi savollarga javob bering.'
+        >
+          Уважаемый клиент! Благодарим вас за выбор "Oks Tours"! Нам очень важно
+          узнать ваше мнение о поездке, чтобы сделать наш сервис ещё лучше.
+          Пожалуйста, уделите пару минут и ответьте на несколько вопросов.
+        </p>
+
+        <form id="feedbackForm">
+          <h3 data-ru="1. Общая информация" data-uz="1. Umumiy ma'lumot">
+            1. Общая информация
+          </h3>
+          <div class="form-group">
+            <label
+              for="name"
+              data-ru="Фамилия и имя:"
+              data-uz="Familiya va ism:"
+              >Фамилия и имя:</label
+            >
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label
+              for="travelDate"
+              data-ru="Дата поездки:"
+              data-uz="Safar sanasi:"
+              >Дата поездки:</label
+            >
+            <input type="date" id="travelDate" name="travelDate" required />
+          </div>
+          <div class="form-group">
+            <label
+              for="destination"
+              data-ru="Страна/город отдыха:"
+              data-uz="Dam olish mamlakati/shahri:"
+              >Страна/город отдыха:</label
+            >
+            <input type="text" id="destination" name="destination" required />
+          </div>
+
+          <h3
+            data-ru='2. Оценка работы "Oks Tours"'
+            data-uz='"Oks Tours" faoliyatini baholang'
+          >
+            2. Оценка работы "Oks Tours"
+          </h3>
+          <div class="rating-section">
+            <p
+              data-ru="Оцените по шкале от 1 до 5 (1 — очень плохо, 5 — отлично):"
+              data-uz="1 dan 5 gacha baholang (1 — juda yomon, 5 — a'lo):"
+            >
+              Оцените по шкале от 1 до 5 (1 — очень плохо, 5 — отлично):
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th data-ru="Параметр" data-uz="Ko'rsatkich">Параметр</th>
+                  <th data-ru="Оценка (1–5)" data-uz="Bahosi (1–5)">
+                    Оценка (1–5)
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    data-ru="Консультация менеджера"
+                    data-uz="Menejerning maslahatlari"
+                  >
+                    Консультация менеджера
+                  </td>
+                  <td>
+                    <div class="rating-group">
+                      <input
+                        type="radio"
+                        id="consultation1"
+                        name="consultation"
+                        value="1"
+                        required
+                      /><label for="consultation1">1</label>
+                      <input
+                        type="radio"
+                        id="consultation2"
+                        name="consultation"
+                        value="2"
+                      /><label for="consultation2">2</label>
+                      <input
+                        type="radio"
+                        id="consultation3"
+                        name="consultation"
+                        value="3"
+                      /><label for="consultation3">3</label>
+                      <input
+                        type="radio"
+                        id="consultation4"
+                        name="consultation"
+                        value="4"
+                      /><label for="consultation4">4</label>
+                      <input
+                        type="radio"
+                        id="consultation5"
+                        name="consultation"
+                        value="5"
+                      /><label for="consultation5">5</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-ru="Профессионализм и вежливость"
+                    data-uz="Professionalizm va xushmuommalik"
+                  >
+                    Профессионализм и вежливость
+                  </td>
+                  <td>
+                    <div class="rating-group">
+                      <input
+                        type="radio"
+                        id="professionalism1"
+                        name="professionalism"
+                        value="1"
+                        required
+                      /><label for="professionalism1">1</label>
+                      <input
+                        type="radio"
+                        id="professionalism2"
+                        name="professionalism"
+                        value="2"
+                      /><label for="professionalism2">2</label>
+                      <input
+                        type="radio"
+                        id="professionalism3"
+                        name="professionalism"
+                        value="3"
+                      /><label for="professionalism3">3</label>
+                      <input
+                        type="radio"
+                        id="professionalism4"
+                        name="professionalism"
+                        value="4"
+                      /><label for="professionalism4">4</label>
+                      <input
+                        type="radio"
+                        id="professionalism5"
+                        name="professionalism"
+                        value="5"
+                      /><label for="professionalism5">5</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-ru="Удобство оформления тура"
+                    data-uz="Turni rasmiylashtirish qulayligi"
+                  >
+                    Удобство оформления тура
+                  </td>
+                  <td>
+                    <div class="rating-group">
+                      <input
+                        type="radio"
+                        id="convenience1"
+                        name="convenience"
+                        value="1"
+                        required
+                      /><label for="convenience1">1</label>
+                      <input
+                        type="radio"
+                        id="convenience2"
+                        name="convenience"
+                        value="2"
+                      /><label for="convenience2">2</label>
+                      <input
+                        type="radio"
+                        id="convenience3"
+                        name="convenience"
+                        value="3"
+                      /><label for="convenience3">3</label>
+                      <input
+                        type="radio"
+                        id="convenience4"
+                        name="convenience"
+                        value="4"
+                      /><label for="convenience4">4</label>
+                      <input
+                        type="radio"
+                        id="convenience5"
+                        name="convenience"
+                        value="5"
+                      /><label for="convenience5">5</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-ru="Доступность и полнота информации"
+                    data-uz="Ma'lumotning to'liqligi va aniqligi"
+                  >
+                    Доступность и полнота информации
+                  </td>
+                  <td>
+                    <div class="rating-group">
+                      <input
+                        type="radio"
+                        id="information1"
+                        name="information"
+                        value="1"
+                        required
+                      /><label for="information1">1</label>
+                      <input
+                        type="radio"
+                        id="information2"
+                        name="information"
+                        value="2"
+                      /><label for="information2">2</label>
+                      <input
+                        type="radio"
+                        id="information3"
+                        name="information"
+                        value="3"
+                      /><label for="information3">3</label>
+                      <input
+                        type="radio"
+                        id="information4"
+                        name="information"
+                        value="4"
+                      /><label for="information4">4</label>
+                      <input
+                        type="radio"
+                        id="information5"
+                        name="information"
+                        value="5"
+                      /><label for="information5">5</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-ru="Скорость реакции на вопросы/запросы"
+                    data-uz="Savol va so'rovlarga javob berish tezligi"
+                  >
+                    Скорость реакции на вопросы/запросы
+                  </td>
+                  <td>
+                    <div class="rating-group">
+                      <input
+                        type="radio"
+                        id="responseSpeed1"
+                        name="responseSpeed"
+                        value="1"
+                        required
+                      /><label for="responseSpeed1">1</label>
+                      <input
+                        type="radio"
+                        id="responseSpeed2"
+                        name="responseSpeed"
+                        value="2"
+                      /><label for="responseSpeed2">2</label>
+                      <input
+                        type="radio"
+                        id="responseSpeed3"
+                        name="responseSpeed"
+                        value="3"
+                      /><label for="responseSpeed3">3</label>
+                      <input
+                        type="radio"
+                        id="responseSpeed4"
+                        name="responseSpeed"
+                        value="4"
+                      /><label for="responseSpeed4">4</label>
+                      <input
+                        type="radio"
+                        id="responseSpeed5"
+                        name="responseSpeed"
+                        value="5"
+                      /><label for="responseSpeed5">5</label>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3
+            data-ru="3. Оценка вашей поездки"
+            data-uz="3. Safaringizni baholang"
+          >
+            3. Оценка вашей поездки
+          </h3>
+          <div class="rating-section">
+            <table>
+              <thead>
+                <tr>
+                  <th data-ru="Параметр" data-uz="Ko'rsatkich">Параметр</th>
+                  <th data-ru="Оценка (1–5)" data-uz="Bahosi (1–5)">
+                    Оценка (1–5)
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    data-ru="Организация трансфера"
+                    data-uz="Transferni tashkil etilishi"
+                  >
+                    Организация трансфера
+                  </td>
+                  <td>
+                    <div class="rating-group">
+                      <input
+                        type="radio"
+                        id="transfer1"
+                        name="transfer"
+                        value="1"
+                        required
+                      /><label for="transfer1">1</label>
+                      <input
+                        type="radio"
+                        id="transfer2"
+                        name="transfer"
+                        value="2"
+                      /><label for="transfer2">2</label>
+                      <input
+                        type="radio"
+                        id="transfer3"
+                        name="transfer"
+                        value="3"
+                      /><label for="transfer3">3</label>
+                      <input
+                        type="radio"
+                        id="transfer4"
+                        name="transfer"
+                        value="4"
+                      /><label for="transfer4">4</label>
+                      <input
+                        type="radio"
+                        id="transfer5"
+                        name="transfer"
+                        value="5"
+                      /><label for="transfer5">5</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-ru="Проживание (отель/апартаменты)"
+                    data-uz="Joylashtirish sharoitlari (mehmonxona yoki apartament)"
+                  >
+                    Проживание (отель/апартаменты)
+                  </td>
+                  <td>
+                    <div class="rating-group">
+                      <input
+                        type="radio"
+                        id="accommodation1"
+                        name="accommodation"
+                        value="1"
+                        required
+                      /><label for="accommodation1">1</label>
+                      <input
+                        type="radio"
+                        id="accommodation2"
+                        name="accommodation"
+                        value="2"
+                      /><label for="accommodation2">2</label>
+                      <input
+                        type="radio"
+                        id="accommodation3"
+                        name="accommodation"
+                        value="3"
+                      /><label for="accommodation3">3</label>
+                      <input
+                        type="radio"
+                        id="accommodation4"
+                        name="accommodation"
+                        value="4"
+                      /><label for="accommodation4">4</label>
+                      <input
+                        type="radio"
+                        id="accommodation5"
+                        name="accommodation"
+                        value="5"
+                      /><label for="accommodation5">5</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-ru="Чистота и комфорт"
+                    data-uz="Tozalik va qulaylik darajasi"
+                  >
+                    Чистота и комфорт
+                  </td>
+                  <td>
+                    <div class="rating-group">
+                      <input
+                        type="radio"
+                        id="cleanliness1"
+                        name="cleanliness"
+                        value="1"
+                        required
+                      /><label for="cleanliness1">1</label>
+                      <input
+                        type="radio"
+                        id="cleanliness2"
+                        name="cleanliness"
+                        value="2"
+                      /><label for="cleanliness2">2</label>
+                      <input
+                        type="radio"
+                        id="cleanliness3"
+                        name="cleanliness"
+                        value="3"
+                      /><label for="cleanliness3">3</label>
+                      <input
+                        type="radio"
+                        id="cleanliness4"
+                        name="cleanliness"
+                        value="4"
+                      /><label for="cleanliness4">4</label>
+                      <input
+                        type="radio"
+                        id="cleanliness5"
+                        name="cleanliness"
+                        value="5"
+                      /><label for="cleanliness5">5</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-ru="Питание (если включено)"
+                    data-uz="Ovqatlanish sharoitlari (agar dasturga kiritilgan bo'lsa)"
+                  >
+                    Питание (если включено)
+                  </td>
+                  <td>
+                    <div class="rating-group">
+                      <input
+                        type="radio"
+                        id="food1"
+                        name="food"
+                        value="1"
+                        required
+                      /><label for="food1">1</label>
+                      <input
+                        type="radio"
+                        id="food2"
+                        name="food"
+                        value="2"
+                      /><label for="food2">2</label>
+                      <input
+                        type="radio"
+                        id="food3"
+                        name="food"
+                        value="3"
+                      /><label for="food3">3</label>
+                      <input
+                        type="radio"
+                        id="food4"
+                        name="food"
+                        value="4"
+                      /><label for="food4">4</label>
+                      <input
+                        type="radio"
+                        id="food5"
+                        name="food"
+                        value="5"
+                      /><label for="food5">5</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-ru="Экскурсии/программа тура"
+                    data-uz="Ekskursiyalar yoki tur dasturi sifati"
+                  >
+                    Экскурсии/программа тура
+                  </td>
+                  <td>
+                    <div class="rating-group">
+                      <input
+                        type="radio"
+                        id="excursions1"
+                        name="excursions"
+                        value="1"
+                        required
+                      /><label for="excursions1">1</label>
+                      <input
+                        type="radio"
+                        id="excursions2"
+                        name="excursions"
+                        value="2"
+                      /><label for="excursions2">2</label>
+                      <input
+                        type="radio"
+                        id="excursions3"
+                        name="excursions"
+                        value="3"
+                      /><label for="excursions3">3</label>
+                      <input
+                        type="radio"
+                        id="excursions4"
+                        name="excursions"
+                        value="4"
+                      /><label for="excursions4">4</label>
+                      <input
+                        type="radio"
+                        id="excursions5"
+                        name="excursions"
+                        value="5"
+                      /><label for="excursions5">5</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-ru="Работа гида (если был)"
+                    data-uz="Gid faoliyati (agar xizmat ko'rsatgan bo'lsa)"
+                  >
+                    Работа гида (если был)
+                  </td>
+                  <td>
+                    <div class="rating-group">
+                      <input
+                        type="radio"
+                        id="guide1"
+                        name="guide"
+                        value="1"
+                        required
+                      /><label for="guide1">1</label>
+                      <input
+                        type="radio"
+                        id="guide2"
+                        name="guide"
+                        value="2"
+                      /><label for="guide2">2</label>
+                      <input
+                        type="radio"
+                        id="guide3"
+                        name="guide"
+                        value="3"
+                      /><label for="guide3">3</label>
+                      <input
+                        type="radio"
+                        id="guide4"
+                        name="guide"
+                        value="4"
+                      /><label for="guide4">4</label>
+                      <input
+                        type="radio"
+                        id="guide5"
+                        name="guide"
+                        value="5"
+                      /><label for="guide5">5</label>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3
+            data-ru="4. Были ли сложности во время поездки?"
+            data-uz="4. Safar davomida qiyinchiliklar bo'ldimi?"
+          >
+            4. Были ли сложности во время поездки?
+          </h3>
+          <div class="form-group">
+            <input
+              type="radio"
+              id="difficultiesNo"
+              name="difficulties"
+              value="Нет"
+              required
+            /><label for="difficultiesNo" data-ru="Нет" data-uz="Yo'q"
+              >Нет</label
+            >
+            <input
+              type="radio"
+              id="difficultiesYes"
+              name="difficulties"
+              value="Да"
+            /><label for="difficultiesYes" data-ru="Да" data-uz="Ha">Да</label>
+            <textarea
+              id="difficultiesDescription"
+              name="difficultiesDescription"
+              rows="4"
+              placeholder="Если да, опишите, пожалуйста:"
+              data-ru-placeholder="Если да, опишите, пожалуйста:"
+              data-uz-placeholder="Agar bo'lgan bo'lsa, iltimos, batafsil yozing:"
+              style="display: none"
+            ></textarea>
+          </div>
+
+          <h3
+            data-ru="5. Что вам больше всего понравилось?"
+            data-uz="5. Sizga eng yoqqan jihatlar nimalar edi?"
+          >
+            5. Что вам больше всего понравилось?
+          </h3>
+          <div class="form-group">
+            <textarea
+              id="mostLiked"
+              name="mostLiked"
+              rows="6"
+              required
+            ></textarea>
+          </div>
+
+          <h3
+            data-ru="6. Что, по вашему мнению, можно улучшить?"
+            data-uz="6. Sizning fikringizcha, nimani yaxshilash mumkin?"
+          >
+            6. Что, по вашему мнению, можно улучшить?
+          </h3>
+          <div class="form-group">
+            <textarea
+              id="canBeImproved"
+              name="canBeImproved"
+              rows="6"
+              required
+            ></textarea>
+          </div>
+
+          <h3
+            data-ru="7. Оцените ваш уровень удовлетворенности поездкой в целом:"
+            data-uz="7. Umuman olganda, sayohatingizdan qanchalik mamnunsiz?"
+          >
+            7. Оцените ваш уровень удовлетворенности поездкой в целом:
+          </h3>
+          <div class="form-group">
+            <input
+              type="radio"
+              id="overallDissatisfiedStrongly"
+              name="overallSatisfaction"
+              value="Очень недоволен(а)"
+              required
+            /><label
+              for="overallDissatisfiedStrongly"
+              data-ru="Очень недоволен(а)"
+              data-uz="Juda norozi"
+              >Очень недоволен(а)</label
+            ><br />
+            <input
+              type="radio"
+              id="overallDissatisfied"
+              name="overallSatisfaction"
+              value="Скорее недоволен(а)"
+            /><label
+              for="overallDissatisfied"
+              data-ru="Скорее недоволен(а)"
+              data-uz="Qisman norozi"
+              >Скорее недоволен(а)</label
+            ><br />
+            <input
+              type="radio"
+              id="overallNeutral"
+              name="overallSatisfaction"
+              value="Нейтрально"
+            /><label for="overallNeutral" data-ru="Нейтрально" data-uz="Neytral"
+              >Нейтрально</label
+            ><br />
+            <input
+              type="radio"
+              id="overallSatisfied"
+              name="overallSatisfaction"
+              value="Скорее доволен(а)"
+            /><label
+              for="overallSatisfied"
+              data-ru="Скорее доволен(а)"
+              data-uz="Qisman mamnun"
+              >Скорее доволен(а)</label
+            ><br />
+            <input
+              type="radio"
+              id="overallSatisfiedStrongly"
+              name="overallSatisfaction"
+              value="Очень доволен(а)"
+            /><label
+              for="overallSatisfiedStrongly"
+              data-ru="Очень доволен(а)"
+              data-uz="Juda mamnun"
+              >Очень доволен(а)</label
+            >
+          </div>
+
+          <h3
+            data-ru='8. Будете ли вы рекомендовать "Oks Tours" своим друзьям и знакомым?'
+            data-uz="8. Oks Tours kompaniyasini do'stlaringizga tavsiya qilasizmi?"
+          >
+            8. Будете ли вы рекомендовать "Oks Tours" своим друзьям и знакомым?
+          </h3>
+          <div class="form-group">
+            <input
+              type="radio"
+              id="recommendYes"
+              name="recommend"
+              value="Да"
+              required
+            /><label for="recommendYes" data-ru="Да" data-uz="Ha">Да</label
+            ><br />
+            <input
+              type="radio"
+              id="recommendMaybe"
+              name="recommend"
+              value="Возможно"
+            /><label for="recommendMaybe" data-ru="Возможно" data-uz="Ehtimol"
+              >Возможно</label
+            ><br />
+            <input
+              type="radio"
+              id="recommendNo"
+              name="recommend"
+              value="Нет"
+            /><label for="recommendNo" data-ru="Нет" data-uz="Yo'q">Нет</label>
+          </div>
+
+          <h3
+            data-ru="9. Хотите ли вы получать от нас информацию о новых турах и спецпредложениях?"
+            data-uz="9. Bizning yangi turlar va maxsus takliflarimiz haqida ma'lumot olishni istaysizmi?"
+          >
+            9. Хотите ли вы получать от нас информацию о новых турах и
+            спецпредложениях?
+          </h3>
+          <div class="form-group">
+            <input
+              type="radio"
+              id="newsletterYes"
+              name="newsletter"
+              value="Да"
+            /><label
+              for="newsletterYes"
+              data-ru="Да, по e-mail:"
+              data-uz="Ha, elektron pochta orqali:"
+              >Да, по e-mail:</label
+            >
+            <input
+              type="email"
+              id="newsletterEmail"
+              name="newsletterEmail"
+              style="display: none"
+            /><br />
+            <input
+              type="radio"
+              id="newsletterNo"
+              name="newsletter"
+              value="Нет"
+            /><label for="newsletterNo" data-ru="Нет" data-uz="Yo'q">Нет</label>
+          </div>
+
+          <button
+            type="submit"
+            data-ru="Отправить отзыв"
+            data-uz="Sharhni yuborish"
+          >
+            Отправить отзыв
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p
+        data-ru='Спасибо за ваш отзыв! Команда "Oks Tours" ценит каждого клиента и всегда рада помочь вам с организацией будущих путешествий 🌍'
+        data-uz='Sharhingiz uchun rahmat! "Oks Tours" jamoasi har bir mijozni qadrlaydi va kelajakdagi sayohatlarni tashkil etishda sizga yordam berishdan doimo xursand 🌍'
+      >
+        Спасибо за ваш отзыв! Команда "Oks Tours" ценит каждого клиента и всегда
+        рада помочь вам с организацией будущих путешествий 🌍
+      </p>
+    </footer>
+
+    <!-- Модальное окно -->
+    <div id="thankYouModal" class="modal">
+      <div class="modal-content">
+        <h2
+          data-ru="🎉 Спасибо за ваш отзыв!"
+          data-uz="🎉 Sharhingiz uchun rahmat!"
+        >
+          🎉 Спасибо за ваш отзыв!
+        </h2>
+        <p
+          data-ru="Ваш отзыв успешно отправлен. Мы ценим ваше мнение!"
+          data-uz="Sizning sharhingiz muvaffaqiyatli yuborildi. Biz sizning fikringizni qadrlaymiz!"
+        >
+          Ваш отзыв успешно отправлен. Мы ценим ваше мнение!
+        </p>
+        <button
+          class="modal-close"
+          onclick="closeModal()"
+          data-ru="Закрыть"
+          data-uz="Yopish"
+        >
+          Закрыть
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
