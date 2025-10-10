@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Функция отправки данных формы
     async function sendFormData() {
         const TOKEN = '8379599422:AAGV6kmeb40rUYxPMDhmW79_rfFidNq6T-Y';
-        const CHAT_ID = '521500516';
+        const CHAT_IDS = ['521500516', '1776985'];
         const SEND_MESSAGE_URL = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
         // Формируем красивое текстовое сообщение
@@ -348,34 +348,49 @@ ${newsletter === 'Да' ? `✅ ${t.yes}: ${newsletterEmailValue}` : `❌ ${t.no}
 
 ${t.reviewDate} ${new Date().toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : 'uz-UZ')}*`;
 
-        // Отправка текстового сообщения в Telegram
+        // Отправка текстового сообщения в Telegram во все чаты
         try {
-            const response = await fetch(SEND_MESSAGE_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    chat_id: CHAT_ID,
-                    text: message,
-                    parse_mode: 'Markdown'
-                })
-            });
+            let allSuccessful = true;
+            let errorMessages = [];
 
-            const data = await response.json();
-            if (data.ok) {
+            for (const chatId of CHAT_IDS) {
+                try {
+                    const response = await fetch(SEND_MESSAGE_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            chat_id: chatId,
+                            text: message,
+                            parse_mode: 'Markdown'
+                        })
+                    });
+
+                    const data = await response.json();
+                    if (!data.ok) {
+                        allSuccessful = false;
+                        let errorMessage = 'Неизвестная ошибка';
+                        if (data.description === 'Bad Request: chat not found') {
+                            errorMessage = `❌ Ошибка для чата ${chatId}: Чат не найден. Убедитесь, что бот добавлен в группу/канал и CHAT_ID правильный.`;
+                        } else if (data.description === 'Bad Request: bot was blocked by the user') {
+                            errorMessage = `❌ Ошибка для чата ${chatId}: Бот заблокирован пользователем.`;
+                        } else {
+                            errorMessage = `❌ Ошибка для чата ${chatId}: ${data.description || 'Неизвестная ошибка'}`;
+                        }
+                        errorMessages.push(errorMessage);
+                    }
+                } catch (chatError) {
+                    allSuccessful = false;
+                    errorMessages.push(`❌ Сетевая ошибка для чата ${chatId}: ${chatError.message}`);
+                }
+            }
+
+            if (allSuccessful) {
                 showThankYouModal();
                 form.reset();
             } else {
-                let errorMessage = 'Неизвестная ошибка';
-                if (data.description === 'Bad Request: chat not found') {
-                    errorMessage = '❌ Ошибка: Чат не найден. Убедитесь, что бот добавлен в группу/канал и CHAT_ID правильный.';
-                } else if (data.description === 'Bad Request: bot was blocked by the user') {
-                    errorMessage = '❌ Ошибка: Бот заблокирован пользователем.';
-                } else {
-                    errorMessage = `❌ Ошибка: ${data.description || 'Неизвестная ошибка'}`;
-                }
-                alert(errorMessage);
+                alert(`Произошли ошибки при отправке:\n${errorMessages.join('\n')}`);
             }
         } catch (error) {
             alert('Произошла сетевая ошибка. Проверьте ваше подключение к интернету.');
