@@ -248,6 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: '👤 Имя:',
                 date: '📅 Дата:',
                 destination: '🌍 Направление:',
+                manager: '👨‍💼 Менеджер:',
                 oksRating: '*2. ОЦЕНКА РАБОТЫ "OKS TOURS"*',
                 consultation: '⭐ Консультация:',
                 professionalism: '⭐ Профессионализм:',
@@ -278,6 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: '👤 Ism:',
                 date: '📅 Sana:',
                 destination: '🌍 Yo\'nalish:',
+                manager: '👨‍💼 Menejer:',
                 oksRating: '*2. "OKS TOURS" FAOLIYATINI BAHOLANG*',
                 consultation: '⭐ Menejerning maslahatlari:',
                 professionalism: '⭐ Professionalizm va xushmuomalalik:',
@@ -312,6 +314,7 @@ ${t.generalInfo}
 ${t.name} ${document.getElementById('name').value || t.notSpecified}
 ${t.date} ${document.getElementById('travelDate').value}
 ${t.destination} ${document.getElementById('destination').value}
+${t.manager} ${document.getElementById('managerName').value || t.notSpecified}
 
 ${t.oksRating}
 ${t.consultation} ${consultationRating}/5
